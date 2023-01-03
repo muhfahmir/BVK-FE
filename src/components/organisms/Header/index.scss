@@ -1,0 +1,16 @@
+.header {
+    transition: height 0.3s ease, background-color 0.3s ease;
+    &.shrink {
+        height: 5rem;
+        background-color: #0f0f0f;
+    }
+
+    ul {
+        li {
+            &.active {
+                font-weight: bold;
+                @apply text-red-500;
+            }
+        }
+    }
+}
