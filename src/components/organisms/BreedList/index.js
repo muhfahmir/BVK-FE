@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Breeds from "constants/api/breeds";
 import BreedListItem from "components/molecules/BreedListItem";
-import { useParams } from "react-router-dom";
+import Loading from "components/atoms/Loading";
 
 export default function BreedList() {
   const [breeds, setBreeds] = useState([]);
@@ -26,6 +26,7 @@ export default function BreedList() {
       });
       if (listBreeds.length) {
         setBreeds([...breeds, ...listBreeds]);
+        setHasMore(true);
       } else {
         setHasMore(false);
       }
@@ -48,12 +49,19 @@ export default function BreedList() {
 
   return (
     <div className="breed-list">
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap -mx-4 ">
         {breeds.map((breed, index) => (
-          <BreedListItem key={`${breed.id}-${index}`} breed={breed} />
+          <div
+            className="lg:w-4/12 relative pb-8 px-4 w-full md:w-6/12"
+            key={`${breed?.id}-${index}`}
+            data-aos="fade-down"
+            data-aos-duration={300 * (index + 1)}
+          >
+            <BreedListItem breed={breed} />
+          </div>
         ))}
-        {loading && <div>loading....</div>}
       </div>
+      {loading && <Loading />}
     </div>
   );
 }

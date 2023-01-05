@@ -11,7 +11,10 @@ export default function Button({
 }) {
   return (
     <button
-      style={{ position: isSearch ? "absolute" : "", right: "0px" }}
+      style={{
+        position: isSearch ? "absolute" : "",
+        right: "0px",
+      }}
       className={`${
         isOutline ? "btn-outline" : "btn"
       } ${className} px-4 py-2 rounded-full `}

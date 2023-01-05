@@ -1,7 +1,19 @@
 $black: #000000;
-$body-bg: #0f0f0f;
+$body-bg: #181d31;
 $border-radius: 30px;
 $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
 
 .hero-slide__item {
   padding: 9rem 2rem;
@@ -10,6 +22,10 @@ $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include mobile() {
+    padding: 0 2rem;
+  }
 
   &::before {
     content: "";
@@ -34,7 +50,18 @@ $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
   &__content {
+    @apply flex flex-row justify-center items-center relative;
+
     &__info {
+      width: 55%;
+      padding: 0 3rem;
+      position: relative;
+
+      @include tablet {
+        width: 100%;
+        padding: 0;
+      }
+
       & > * ~ * {
         margin-top: 3rem;
       }
@@ -44,13 +71,16 @@ $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         font-weight: 700;
         line-height: 1;
 
-        // @include tablet {
-        //   font-size: 4rem;
-        // }
+        @include tablet {
+          font-size: 38px;
+        }
       }
 
       .overview {
-        font-weight: 700;
+        font-weight: 400;
+        @include tablet {
+          font-size: 14px;
+        }
       }
 
       .characteristics,
@@ -63,9 +93,11 @@ $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
     &__poster {
+      @apply flex justify-center items-start;
       flex: 1;
 
       // @include flex(center, flex-start);
+
       position: relative;
 
       img {
@@ -75,6 +107,9 @@ $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
         transform: scale(0);
         transition: transform 0.7s ease;
+        @include tablet {
+          display: none;
+        }
       }
 
       // @include tablet {

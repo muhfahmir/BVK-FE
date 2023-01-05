@@ -1,8 +1,8 @@
-$body-bg: #0f0f0f;
-$main-color: #ff0000;
-$txt-color: #fff;
+$body-bg: #181d31;
+$main-color: #678983;
+$txt-color: #eff5f5;
 
-$white: #fff;
+$white: #eff5f5;
 $black: #000;
 
 $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -21,13 +21,13 @@ button {
     padding: 0.5rem 1.8rem;
     font-size: 1.5rem;
     font-weight: 600;
-    box-shadow: 0px 0px 7px 8px #ff00004d;
+    box-shadow: 0px 0px 7px 8px #6789834d;
     transition: box-shadow 0.3s ease;
     position: relative;
 }
 
 .btn:hover {
-    box-shadow: 0px 0px 7px 15px #ff00004d;
+    box-shadow: 0px 0px 7px 15px #6789834d;
 }
 
 .btn-outline {

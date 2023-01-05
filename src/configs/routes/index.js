@@ -1,13 +1,12 @@
-import Breed from "pages/Breed";
+import Detail from "pages/detail/Detail";
 import Home from "pages/Home";
 
 import { Route, Switch } from "react-router-dom";
 const router = () => {
   return (
     <Switch>
-      {/* <Route path="/search/:keyword" component={Home} /> */}
-      {/* <Route path="/:category/:id" component={Detail} /> */}
-      <Route path="/breeds" component={Breed} />
+      <Route path="/search/:q" component={Home} />
+      <Route path="/breed/:breedId" component={Detail} />
       <Route path="/" component={Home} exact />
     </Switch>
   );

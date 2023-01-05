@@ -1,9 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+@mixin mobile {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
 body {
-    color: #fff;
-    background-color: #0f0f0f;
-    color: #fff;
+    color: #eff5f5;
+    background-color: #181d31;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
 }

@@ -2,13 +2,16 @@ import { useEffect } from "react";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Routes from "configs/routes";
-import Header from "components/organisms/Header";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Footer from "components/organisms/Footer";
+import Routes from "configs/routes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   useEffect(() => {
     document.title = "Catty.";
+    Aos.init({ once: true });
   }, []);
 
   return (
@@ -16,8 +19,7 @@ function App() {
       <Route
         render={(props) => (
           <>
-            <Header {...props} />
-            <Routes />
+            <Routes {...props} />
             <Footer />
           </>
         )}
